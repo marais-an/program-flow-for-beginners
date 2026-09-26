@@ -7,7 +7,12 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart TD
-    A[start] --> B[end]
+    A[start] --> B[input]
+    B --> C{loop}
+    C -->|yes| D[accumulate]
+    D --> B
+    C -->|no| E[output]
+    E --> F[end]
 `;
 
 module.exports = answer.trim();
